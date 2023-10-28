@@ -53,19 +53,19 @@ class LinkedList {
             System.out.print(current.data + " -> ");
             current = current.next;
         }
-        System.out.print("null");
+        System.out.println(current.data + " -> null");
     }
 
-    public void findMiddle() {
+    public Node findMiddle() {
         Node slow = head;
         Node fast = head;
 
-        while (fast.next.next != null) {
+        while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
         }
 
-        System.out.println(slow.data);
+        return slow;
     }
 }
 
@@ -73,9 +73,16 @@ public class W05_LinkedList {
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
 
+        linkedList.add(1);
+        linkedList.add(2);
         linkedList.add(3);
         linkedList.add(4);
-
+        linkedList.add(5);
         linkedList.display();
+        System.out.println(linkedList.findMiddle().data);
+
+        linkedList.add(6);
+        linkedList.display();
+        System.out.println(linkedList.findMiddle().data);
     }
 }
