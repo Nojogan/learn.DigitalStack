@@ -57,8 +57,8 @@ class LinkedList {
     }
 
     public Node findMiddle() {
-        Node slow = head;
         Node fast = head;
+        Node slow = head;
 
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
